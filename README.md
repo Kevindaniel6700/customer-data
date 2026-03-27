@@ -5,7 +5,7 @@ A simple data pipeline that fetches customer data from a Flask mock server and s
 ## Architecture
 
 ```
-Flask Mock Server (port 5001)
+Flask Mock Server (port 5000)
         |
         | HTTP (paginated fetch)
         v
@@ -20,7 +20,7 @@ PostgreSQL Database (port 5432)
 
 | Service           | Technology | Port |
 |-------------------|------------|------|
-| Mock Server       | Flask      | 5001 |
+| Mock Server       | Flask      | 5000 |
 | Pipeline Service  | FastAPI    | 8000 |
 | Database          | PostgreSQL | 5432 |
 
@@ -54,7 +54,7 @@ docker-compose down -v
 
 ## API Endpoints
 
-### Flask Mock Server (`http://localhost:5001`)
+### Flask Mock Server (`http://localhost:5000`)
 
 | Method | Endpoint                      | Description              |
 |--------|-------------------------------|--------------------------|
@@ -79,17 +79,17 @@ FastAPI also provides auto-generated docs at: `http://localhost:8000/docs`
 
 ### 1. Check Flask health
 ```bash
-curl http://localhost:5001/api/health
+curl http://localhost:5000/api/health
 ```
 
 ### 2. Get customers from Flask (page 1, limit 5)
 ```bash
-curl "http://localhost:5001/api/customers?page=1&limit=5"
+curl "http://localhost:5000/api/customers?page=1&limit=5"
 ```
 
 ### 3. Get a specific customer from Flask
 ```bash
-curl http://localhost:5001/api/customers/CUST001
+curl http://localhost:5000/api/customers/CUST001
 ```
 
 ### 4. Trigger ingestion pipeline (Flask → PostgreSQL)
