@@ -30,6 +30,20 @@ PostgreSQL Database (port 5432)
 - Docker
 - Docker Compose
 
+### Environment Setup
+
+Before starting the services, create a `.env` file from the example template:
+
+**On Mac/Linux:**
+```bash
+cp .env.example .env
+```
+
+**On Windows (Command Prompt):**
+```cmd
+copy .env.example .env
+```
+
 ### Start all services
 
 ```bash
