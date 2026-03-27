@@ -1,0 +1,29 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker / Database
+pgdata/
+docker-compose.override.yml
+
+# DLT State/Cache
+.dlt/
+dlt_data/
+*.db
+
+# macOS
+.DS_Store
